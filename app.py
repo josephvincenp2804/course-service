@@ -16,7 +16,7 @@ REGION = os.environ.get("AWS_REGION", "ap-south-2")
 
 # DynamoDB
 dynamodb = boto3.resource("dynamodb", region_name=REGION)
-courses_table = dynamodb.Table("vafiya-course")
+courses_table = dynamodb.Table("joseph-course")
 
 
 @app.route("/health", methods=["GET"])
@@ -51,7 +51,7 @@ def list_courses():
 
     return jsonify(
         response.get("Items", [])
-    ), 
+    ), 200
 
 
 @app.route("/courses", methods=["POST"])

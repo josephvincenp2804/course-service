@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_REGION: "ap-south-2"
-    ECR_REPO: "991524241826.dkr.ecr.ap-south-2.amazonaws.com/cloudstudents/vafiya-course"
+    ECR_REPO: "991524241826.dkr.ecr.ap-south-2.amazonaws.com/cloudstudents/joseph-course"
 
 phases:
   pre_build:
@@ -23,7 +23,7 @@ phases:
       - echo Pushing Docker image...
       - docker push $ECR_REPO:$IMAGE_TAG
       - docker push $ECR_REPO:latest
-      - printf '[{"name":"app-course-vafiya","imageUri":"%s"}]' $ECR_REPO:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"app-course-joseph","imageUri":"%s"}]' $ECR_REPO:$IMAGE_TAG > imagedefinitions.json
 
 artifacts:
   files:
